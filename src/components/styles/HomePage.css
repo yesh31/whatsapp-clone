@@ -1,0 +1,19 @@
+* {
+    background-color: rgb(38, 37, 36);
+    color: white;
+    font-family: Helvetica;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.homepage {
+    border: 2px solid white;
+    margin-left: 120px;
+    margin-right: 120px;
+    display: flex;
+}

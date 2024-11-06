@@ -1,0 +1,14 @@
+.conversation-panel {
+    width: 70%;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+}
+
+.conversation-panel .time {
+    font-size: small;
+    opacity: 0.6;
+}
+
+.full-conversation {
+    margin-top: 10px;
+}

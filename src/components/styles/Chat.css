@@ -118,3 +118,76 @@
     color:rgb(0, 168, 132);
     background-color: inherit;
 }
+
+.chats {
+    background-color: rgb(17, 27, 33);
+    display: flex;
+    align-items: center;
+}
+
+.chats-list {
+    background-color: rgb(17, 27, 33);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    margin-top: 10px;
+}
+
+.chats .profile-picture {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+
+.time {
+    margin: 0;
+    width: fit-content;
+    vertical-align: bottom;
+    opacity: 60%;
+    font-size: small;
+    background-color: rgb(17, 27, 33);
+}
+
+.chat-div {
+    background-color: rgb(17, 27, 33);
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-size: large;
+    display: flex;
+    flex: 1;
+    background-color: rgb(17, 27, 33);
+    margin-bottom: 0px;
+    margin-left: 0;
+    width: fit-content;
+}
+
+.message {
+    margin-top: 7px;
+    opacity: 60%;
+    background-color: inherit;
+}
+
+.chats div {
+    background-color: inherit;
+}
+
+.chats-arrange {
+    margin-left: 10px;
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.conversation-panel {
+    border: 2px solid yellow;
+}
+

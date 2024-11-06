@@ -1,7 +1,26 @@
-import './styles/Chat.css'
+import {useState} from 'react';
+import './styles/Chat.css';
 
 function Chat() {
+
+    const [selectedChat, setSelectedChat] = useState(null);
+
+    const chats = [
+        { id: 1, name: 'Isha Menon', time: '7:36 pm', message: 'Hey, What are you doing tonight?', img:'https://img.freepik.com/free-photo/lovely-satisfied-freckled-female-with-crisp-hair-has-gentle-smile-dressed-striped-black-white-shirt-rejoices-positive-moments-life-isolated-wall-people-emotions_273609-15763.jpg?semt=ais_hybrid" alt="profile-picture"' },
+        { id: 2, name: 'Rohan Sharma', time: '6:15 pm', message: 'Let’s catch up tomorrow morning!', img:'https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/short/linkedin-profile-picture-maker/dummy_image/thumb/001.webp' },
+        { id: 3, name: 'Aditi Rao', time: '5:40 pm', message: 'Got the tickets. See you at the concert!', img:'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+        { id: 4, name: 'Neha Kapoor', time: '4:10 pm', message: 'Can you send the report by tonight?', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR79RQ2V1E5HT2FurisgydG11hdaeBjYCel7w&s' },
+        { id: 5, name: 'Arjun Singh', time: '3:20 pm', message: 'Lunch at the new café today?', img:'https://media.istockphoto.com/id/1682296067/photo/happy-studio-portrait-or-professional-man-real-estate-agent-or-asian-businessman-smile-for.jpg?s=612x612&w=0&k=20&c=9zbG2-9fl741fbTWw5fNgcEEe4ll-JegrGlQQ6m54rg=' },
+        { id: 6, name: 'Priya Jain', time: '2:50 pm', message: 'Did you finish the project draft?', img:'https://img.freepik.com/free-photo/asian-woman-posing-looking-camera_23-2148255359.jpg' },
+        { id: 7, name: 'Vikram Mehta', time: '1:30 pm', message: 'Let’s meet at the gym later.', img:'https://lirp.cdn-website.com/4d7c0a1b/dms3rep/multi/opt/Guillaume-Deneufbourg-Square_Profile_S-640w.jpg' },
+    ];
+
+    const handleChatClick = (chat) => {
+        setSelectedChat(chat);
+    };
+
     return (
+        <>
         <div className="chat">
             <div className="chat-top">
                 <div className='v-1'>
@@ -27,8 +46,42 @@ function Chat() {
                 <div className='archive-text'>Archived</div>
                 <div className='archive-num'>4</div>
             </div>
-
+            <div className="chats-list">
+                {chats.map((chat) => (
+                    <div key={chat.id} className="chats" onClick={() => handleChatClick(chat)}>
+                    <img className="profile-picture" src={chat.img}/>
+                        <div className='chats-arrange'>
+                            <div className="chat-div">
+                                <p className='name'>{chat.name}</p>
+                                <p className='time'>{chat.time}</p>
+                            </div>
+                            <div className='chat-div-2'>
+                                <p className='message'>{chat.message}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
+        <div>
+            {/* Conversation Panel */}
+            <div className="conversation-panel">
+                {selectedChat ? (
+                    <div>
+                        <h2>{selectedChat.name}</h2>
+                        <p>{selectedChat.time}</p>
+                        <div className="full-conversation">
+                            {/* Render the full conversation here */}
+                            <p>{selectedChat.message}</p>
+                            <p>Other messages...</p>
+                        </div>
+                    </div>
+                ) : (
+                    <p>Select a chat to view the conversation</p>
+                )}
+            </div>
+        </div>
+        </>
     );
 }
 

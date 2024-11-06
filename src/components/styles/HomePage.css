@@ -12,7 +12,6 @@ body {
 }
 
 .homepage {
-    border: 2px solid white;
     margin-left: 120px;
     margin-right: 120px;
     display: flex;

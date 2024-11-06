@@ -5,10 +5,10 @@
 
 .chat-top {
     height: 70px;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 0 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
     background-color: inherit;
 }
 
@@ -18,21 +18,21 @@
 }
 
 .v-1 h1 {
-    margin: 0; 
+    margin: 0;
     font-size: x-large;
     font-weight: 700;
     background-color: rgb(17, 27, 33);
 }
 
 .v-2 {
-    display: flex; 
+    display: flex;
     align-items: center;
-    background-color: rgb(17, 27, 33); 
+    background-color: rgb(17, 27, 33);
     padding: 5px;
 }
 
 .v-2 svg {
-    background-color: rgb(17, 27, 33); 
+    background-color: rgb(17, 27, 33);
     fill: currentColor;
     margin-left: 30px;
     opacity: 60%;
@@ -103,7 +103,7 @@
 
 .archived svg {
     margin-left: 20px;
-    color:rgb(0, 168, 132);
+    color: rgb(0, 168, 132);
     fill: currentColor;
 }
 
@@ -115,7 +115,7 @@
 
 .archive-num {
     margin-right: 25px;
-    color:rgb(0, 168, 132);
+    color: rgb(0, 168, 132);
     background-color: inherit;
 }
 
@@ -188,6 +188,71 @@
 }
 
 .conversation-panel {
-    border: 2px solid yellow;
+    width: 1000px;
+    height: 777px;
 }
 
+.chat-banner {
+    border: 5px solid pink;
+    display: flex;
+    align-items: center;
+    background-color: rgb(32, 44, 51);
+}
+
+.convo-right {
+    background-color: inherit;
+    display: flex;
+    flex: 1;
+    justify-content: end;
+}
+
+.convo-right svg {
+    background-color: inherit;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.banner-pp {
+    margin-left: 13px;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.unselected-chat-div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: 777px;
+    background-color: rgb(34, 46, 53);
+}
+
+.unselected-chat-div .description-unselected {
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unselected-chat-div button {
+    margin-top: 35px;
+    background-color: rgb(0, 168, 132);
+    color: rgb(17, 27, 33);
+    border-radius: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+    border: none;
+    width: 200px;
+}
+
+.last-sentence-unselected {
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+    opacity: 60%;
+}

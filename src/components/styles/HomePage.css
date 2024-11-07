@@ -12,6 +12,7 @@ body {
 }
 
 .homepage {
+    height: 95vh;
     margin-left: 120px;
     margin-right: 120px;
     display: flex;

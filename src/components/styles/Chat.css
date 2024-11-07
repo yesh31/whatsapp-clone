@@ -189,11 +189,63 @@
 
 .conversation-panel {
     width: 1000px;
-    height: 777px;
+    height: 95vh;
 }
 
+.conversation-panel-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.full-conversation {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: rgb(17, 27, 33);
+}
+
+.chat-bubble {
+    max-width: 60%;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.incoming {
+    background-color: rgb(32, 44, 51);
+    color: #fff;
+    align-self: flex-start;
+    border-radius: 10px 10px 10px 0;
+}
+
+.outgoing {
+    background-color: rgb(0, 168, 132);
+    color: #fff;
+    align-self: flex-end;
+    border-radius: 10px 10px 0 10px;
+    margin-left: auto;
+}
+
+.message-content {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.message-time {
+    background-color: inherit;
+    align-self: flex-end;
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+
 .chat-banner {
-    border: 5px solid pink;
     display: flex;
     align-items: center;
     background-color: rgb(32, 44, 51);
@@ -227,7 +279,7 @@
     flex: 1;
     align-items: center;
     justify-content: center;
-    height: 777px;
+    height: 95vh;
     background-color: rgb(34, 46, 53);
 }
 
@@ -255,4 +307,54 @@
     align-items: center;
     background-color: inherit;
     opacity: 60%;
+}
+
+.input-chat-div {
+    display: flex;
+    height: 7%; 
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(32, 44, 51);
+    padding: 0 10px;
+}
+
+.left-input, .middle-input, .right-input {
+    display: flex;
+    align-items: center;
+    background-color: rgb(32, 44, 51);
+}
+
+.middle-input {
+    flex: 1;
+}
+
+.input-message {
+    flex: 1;
+    background-color: rgb(42, 57, 66);
+    margin: 0 10px; 
+    border-radius: 7px;
+    height: 30px; 
+    padding: 8px; 
+    color: #fff; 
+    border: none; 
+    outline: none;
+    font-size: 15px;
+}
+
+.emoji-box, .more-box, .microphone-box {
+    display: inline-block;
+    background-color: rgb(32, 44, 51);
+}
+
+.left-input .emoji-box {
+    margin-left: 10px;
+    margin-right: 10px; 
+}
+
+.left-input .more-box {
+    margin-left: 10px;
+}
+
+.microphone-box {
+    margin-left: 10px;
 }

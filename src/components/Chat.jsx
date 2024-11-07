@@ -8,13 +8,104 @@ function Chat() {
     const [completeChat, setCompleteChat] = useState(null);
 
     const chats = [
-        { id: 1, name: 'Isha Menon', time: '7:36 pm', message: 'Hey, What are you doing tonight?', img: 'https://img.freepik.com/free-photo/lovely-satisfied-freckled-female-with-crisp-hair-has-gentle-smile-dressed-striped-black-white-shirt-rejoices-positive-moments-life-isolated-wall-people-emotions_273609-15763.jpg?semt=ais_hybrid" alt="profile-picture"' },
-        { id: 2, name: 'Rohan Sharma', time: '6:15 pm', message: 'Let’s catch up tomorrow morning!', img: 'https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/short/linkedin-profile-picture-maker/dummy_image/thumb/001.webp' },
-        { id: 3, name: 'Aditi Rao', time: '5:40 pm', message: 'Got the tickets. See you at the concert!', img: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-        { id: 4, name: 'Neha Kapoor', time: '4:10 pm', message: 'Can you send the report by tonight?', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR79RQ2V1E5HT2FurisgydG11hdaeBjYCel7w&s' },
-        { id: 5, name: 'Arjun Singh', time: '3:20 pm', message: 'Lunch at the new café today?', img: 'https://media.istockphoto.com/id/1682296067/photo/happy-studio-portrait-or-professional-man-real-estate-agent-or-asian-businessman-smile-for.jpg?s=612x612&w=0&k=20&c=9zbG2-9fl741fbTWw5fNgcEEe4ll-JegrGlQQ6m54rg=' },
-        { id: 6, name: 'Priya Jain', time: '2:50 pm', message: 'Did you finish the project draft?', img: 'https://img.freepik.com/free-photo/asian-woman-posing-looking-camera_23-2148255359.jpg' },
-        { id: 7, name: 'Vikram Mehta', time: '1:30 pm', message: 'Let’s meet at the gym later.', img: 'https://lirp.cdn-website.com/4d7c0a1b/dms3rep/multi/opt/Guillaume-Deneufbourg-Square_Profile_S-640w.jpg' },
+        {
+            id: 1,
+            name: 'Isha Menon',
+            time: '7:36 pm',
+            lastmessage: 'Hey, What are you doing tonight?',
+            img: 'https://img.freepik.com/free-photo/lovely-satisfied-freckled-female-with-crisp-hair-has-gentle-smile-dressed-striped-black-white-shirt-rejoices-positive-moments-life-isolated-wall-people-emotions_273609-15763.jpg?semt=ais_hybrid',
+            messages: [
+                { time: "7:30 pm", sender: "Isha", text: "Hey! How’s it going?" },
+                { time: "7:31 pm", sender: "You", text: "Good, just wrapping up some work. You?" },
+                { time: "7:32 pm", sender: "Isha", text: "Same here! Got any plans for tonight?" },
+                { time: "7:34 pm", sender: "You", text: "Not yet. Why, what’s up?" },
+                { time: "7:36 pm", sender: "Isha", text: "Hey, what are you doing tonight?" }
+            ]
+        },
+        {
+            id: 2,
+            name: 'Rohan Sharma',
+            time: '6:15 pm',
+            lastmessage: 'Let’s catch up tomorrow morning!',
+            img: 'https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/short/linkedin-profile-picture-maker/dummy_image/thumb/001.webp',
+            messages: [
+                { time: "6:05 pm", sender: "You", text: "Hey Rohan! Busy week?" },
+                { time: "6:06 pm", sender: "Rohan", text: "Yeah, loads of meetings. Need a break!" },
+                { time: "6:07 pm", sender: "You", text: "Same here. We should catch up." },
+                { time: "6:10 pm", sender: "Rohan", text: "Morning works for me. Coffee?" },
+                { time: "6:15 pm", sender: "Rohan", text: "Let’s catch up tomorrow morning!" }
+            ]
+        },
+        {
+            id: 3,
+            name: 'Aditi Rao',
+            time: '5:40 pm',
+            lastmessage: 'Got the tickets. See you at the concert!',
+            img: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            messages: [
+                { time: "5:30 pm", sender: "You", text: "Did you manage to get the tickets?" },
+                { time: "5:32 pm", sender: "Aditi", text: "Yes! Finally managed to grab a pair." },
+                { time: "5:34 pm", sender: "You", text: "Awesome! Can't wait for the concert." },
+                { time: "5:36 pm", sender: "Aditi", text: "Me too! Let’s meet there around 7?" },
+                { time: "5:40 pm", sender: "Aditi", text: "Got the tickets. See you at the concert!" }
+            ]
+        },
+        {
+            id: 4,
+            name: 'Neha Kapoor',
+            time: '4:10 pm',
+            lastmessage: 'Can you send the report by tonight?',
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR79RQ2V1E5HT2FurisgydG11hdaeBjYCel7w&s',
+            messages: [
+                { time: "3:55 pm", sender: "Neha", text: "Hey, any updates on the report?" },
+                { time: "3:56 pm", sender: "You", text: "Almost done, just polishing it up." },
+                { time: "4:00 pm", sender: "Neha", text: "Great! Can you include the analysis section?" },
+                { time: "4:05 pm", sender: "You", text: "Sure thing. Will send it by evening." },
+                { time: "4:10 pm", sender: "Neha", text: "Can you send the report by tonight?" }
+            ]
+        },
+        {
+            id: 5,
+            name: 'Arjun Singh',
+            time: '3:20 pm',
+            lastmessage: 'Lunch at the new café today?',
+            img: 'https://media.istockphoto.com/id/1682296067/photo/happy-studio-portrait-or-professional-man-real-estate-agent-or-asian-businessman-smile-for.jpg?s=612x612&w=0&k=20&c=9zbG2-9fl741fbTWw5fNgcEEe4ll-JegrGlQQ6m54rg=',
+            messages: [
+                { time: "3:00 pm", sender: "Arjun", text: "Have you tried that new café yet?" },
+                { time: "3:02 pm", sender: "You", text: "Not yet, but I’ve heard good things." },
+                { time: "3:05 pm", sender: "Arjun", text: "Wanna go today for lunch?" },
+                { time: "3:10 pm", sender: "You", text: "Sounds good! Let’s meet around 12?" },
+                { time: "3:20 pm", sender: "Arjun", text: "Lunch at the new café today?" }
+            ]
+        },
+        {
+            id: 6,
+            name: 'Priya Jain',
+            time: '2:50 pm',
+            lastmessage: 'Did you finish the project draft?',
+            img: 'https://img.freepik.com/free-photo/asian-woman-posing-looking-camera_23-2148255359.jpg',
+            messages: [
+                { time: "2:30 pm", sender: "Priya", text: "Hey! How’s the project draft coming along?" },
+                { time: "2:32 pm", sender: "You", text: "Almost there. I’ll share it soon for feedback." },
+                { time: "2:35 pm", sender: "Priya", text: "Great, looking forward to seeing it." },
+                { time: "2:40 pm", sender: "You", text: "Just finishing up the last few sections." },
+                { time: "2:50 pm", sender: "Priya", text: "Did you finish the project draft?" }
+            ]
+        },
+        {
+            id: 7,
+            name: 'Vikram Mehta',
+            time: '1:30 pm',
+            lastmessage: 'Let’s meet at the gym later.',
+            img: 'https://lirp.cdn-website.com/4d7c0a1b/dms3rep/multi/opt/Guillaume-Deneufbourg-Square_Profile_S-640w.jpg',
+            messages: [
+                { time: "1:15 pm", sender: "You", text: "What’s the plan for today’s workout?" },
+                { time: "1:17 pm", sender: "Vikram", text: "Thinking of doing some strength training." },
+                { time: "1:20 pm", sender: "You", text: "Perfect, I’m in." },
+                { time: "1:25 pm", sender: "Vikram", text: "Let’s meet around 6 at the gym?" },
+                { time: "1:30 pm", sender: "Vikram", text: "Let’s meet at the gym later." }
+            ]
+        }
     ];
 
     const handleChatClick = (chat) => {
@@ -58,7 +149,7 @@ function Chat() {
                                     <p className='time'>{chat.time}</p>
                                 </div>
                                 <div className='chat-div-2'>
-                                    <p className='message'>{chat.message}</p>
+                                    <p className='message'>{chat.lastmessage}</p>
                                 </div>
                             </div>
                         </div>
@@ -79,20 +170,40 @@ function Chat() {
                                 </div>
                             </div>
                             <div className="full-conversation">
-                                <p>{selectedChat.message}</p>
-                                <p>Other messages...</p>
+                                {selectedChat.messages.map((message, index) => (
+                                    <div
+                                        key={index}
+                                        className={`chat-bubble ${message.sender === "You" ? "outgoing" : "incoming"}`}
+                                    >
+                                        <div className="message-content">
+                                            <p style={{ backgroundColor: 'inherit' }}>{message.text}</p>
+                                            <div className="message-time">{message.time}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="input-chat-div">
+                                <div className="left-input">
+                                    <img src="src\assets\smily.png" style={{height:'24px',width:'24px',backgroundColor:'inherit'}} className='emoji-box'/>
+                                    <img src="src\assets\more-icon.png" style={{height:'30px',width:'30px',backgroundColor:'inherit'}} className='more-box'/>
+                                </div>
+                                <div className="middle-input">
+                                    <input type="text" placeholder='Type a message' className='input-message' />
+                                </div>
+                                <div className="right-input">
+                                    <svg className='microphone-box' viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>ptt</title><path fill="currentColor" d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z"></path></svg>
+                                </div>
                             </div>
                         </div>
-
                     ) : (
                         <div className="unselected-chat-div">
                             <img style={{ 'background-color': 'inherit' }} width="320" alt="" src="https://static.whatsapp.net/rsrc.php/v3/y6/r/wa669aeJeom.png"></img>
-                            <h1 style={{ 'background-color': 'inherit', fontSize:'36px', fontWeight:'300', fontFamily: '"SF Pro Text", "SF Pro Icons", system, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Ubuntu, Cantarell, "Fira Sans", sans-serif', color:'rgba(233, 237, 239, 0.88)' }}>Download WhatsApp for Windows</h1>
-                            <div className='description-unselected' style={{ fontSize: '14px;', 'font-weight': '400px;', 'fontFamily': '"SF Pro Text", "SF Pro Icons", system, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Ubuntu, Cantarell, "Fira Sans", sans-serif', color:'rgba(233, 237, 239, 0.88)' }}>Make calls, share your screen and get a faster experience when you download the Windows app.</div>
-                            <button style={{fontFamily:'"Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif', fontWeight:'500'}}>Get from Microsoft Store</button>
+                            <h1 style={{ 'background-color': 'inherit', fontSize: '36px', fontWeight: '300', fontFamily: '"SF Pro Text", "SF Pro Icons", system, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Ubuntu, Cantarell, "Fira Sans", sans-serif', color: 'rgba(233, 237, 239, 0.88)' }}>Download WhatsApp for Windows</h1>
+                            <div className='description-unselected' style={{ fontSize: '14px;', 'font-weight': '400px;', 'fontFamily': '"SF Pro Text", "SF Pro Icons", system, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Ubuntu, Cantarell, "Fira Sans", sans-serif', color: 'rgba(233, 237, 239, 0.88)' }}>Make calls, share your screen and get a faster experience when you download the Windows app.</div>
+                            <button style={{ fontFamily: '"Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif', fontWeight: '500' }}>Get from Microsoft Store</button>
                             <div className="last-sentence-unselected">
                                 <svg viewBox="0 0 10 12" height="12" width="10" preserveAspectRatio="xMidYMid meet" class="" version="1.1"><title>lock-small</title><path d="M5.00847986,1.6 C6.38255462,1.6 7.50937014,2.67435859 7.5940156,4.02703389 L7.59911976,4.1906399 L7.599,5.462 L7.75719976,5.46214385 C8.34167974,5.46214385 8.81591972,5.94158383 8.81591972,6.53126381 L8.81591972,9.8834238 C8.81591972,10.4731038 8.34167974,10.9525438 7.75719976,10.9525438 L2.25767996,10.9525438 C1.67527998,10.9525438 1.2,10.4731038 1.2,9.8834238 L1.2,6.53126381 C1.2,5.94158383 1.67423998,5.46214385 2.25767996,5.46214385 L2.416,5.462 L2.41679995,4.1906399 C2.41679995,2.81636129 3.49135449,1.68973395 4.84478101,1.60510326 L5.00847986,1.6 Z M5.00847986,2.84799995 C4.31163824,2.84799995 3.73624912,3.38200845 3.6709675,4.06160439 L3.6647999,4.1906399 L3.663,5.462 L6.35,5.462 L6.35111981,4.1906399 C6.35111981,3.53817142 5.88169076,2.99180999 5.26310845,2.87228506 L5.13749818,2.85416626 L5.00847986,2.84799995 Z" fill="currentColor"></path></svg>
-                                <p style={{backgroundColor:'inherit','margin-left':'10px', fontSize:'14px'}}>Your personal messages are end to end encrypted</p>
+                                <p style={{ backgroundColor: 'inherit', 'margin-left': '10px', fontSize: '14px' }}>Your personal messages are end to end encrypted</p>
                             </div>
                         </div>
                     )}

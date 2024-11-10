@@ -4,20 +4,13 @@ A simplified, static clone of the WhatsApp web application, built using React.js
 ## Table of Content:
 
 - [About The App](#about-the-app)
-- [Screenshots](#screenshots)
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Approach](#approach)
-- [Status](#status)
-- [Credits](#credits)
-- [License](#license)
+- [Future Work](#future)
 
 ## About The App
 This project uses React.js and CSS to create a mock WhatsApp web interface, displaying a range of sample chats with basic interaction features such as selecting a chat and viewing its messages. The goal of this project is to mimic the visual layout of WhatsApp’s interface and practice building structured web layouts with responsive elements.
-
-## Screenshots
-
-`![Writing](https://unsplash.com/photos/VBPzRgd7gfc)`
 
 ## Technologies
 I used `react.js`, `css`, `html` for this project.
@@ -36,20 +29,17 @@ I used `react.js`, `css`, `html` for this project.
   npm install
   ```
   
-- ```bash
+- Run the project:
+  ```bash
   npm run dev
   ```
 
 ## Approach
 I started out by analysing web.whatsapp.com and understood the layout of the application. Then I divided the entire application into 3 parts for easier development,
-- Chat.jsx: deals with all the code from the
-- HomePage.jsx: puts all the components (Chat.jsx, Sidebar.jsx together)
+- Chat.jsx: deals with all the code for the conversation panel and the chat previews.
+- Sidebar.jsx: deals with the left most corner of the application where you can find all the icons like chat, status, settings, profile etc.
+- HomePage.jsx: puts all the components (Chat.jsx, Sidebar.jsx) together to render at one place.
 
-## Credits
-List of contriubutors:
-- [John Doe](johndoe.com)
-- [Beginners guide to BEM](link-goes-here.com)
-
-## License
-
-MIT license @ [author](author.com)
+## Future Work
+- To make this project responsive to the screen sizes using Bootstrap.
+- To add additional functionalities like enabling search box to filter out messages, post and update the conversation panel using axios library.
